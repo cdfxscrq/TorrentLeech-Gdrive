@@ -197,11 +197,11 @@ async def incoming_youtube_dl_f(client, message):
             yt_dl_pass_word,
             user_working_dir
         )
-        print(thumb_image)
-        req = requests.get(f"{thumb_image}")
-        gau_tam = f"{current_user_id}.jpg"
-        open(gau_tam, 'wb').write(req.content)
         if thumb_image is not None:
+            print(thumb_image)
+            req = requests.get(f"{thumb_image}")
+            gau_tam = f"{current_user_id}.jpg"
+            open(gau_tam, 'wb').write(req.content)
             await message.reply_photo(
                 # text_message,
                 photo=gau_tam,
