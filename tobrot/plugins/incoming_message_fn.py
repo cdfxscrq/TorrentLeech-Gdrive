@@ -265,6 +265,8 @@ async def rename_tg_file(client, message):
         try:
             if file:
                 os.rename(file, new_name)
+            else:
+                return
         except Exception as g_g:
             await message.reply_text("g_g")
         response = {}
